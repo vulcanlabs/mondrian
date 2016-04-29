@@ -1500,4 +1500,15 @@ log4j.configuration=file:log4j.properties</code></blockquote>
         <Core>false</Core>
         <Type>String</Type>
     </PropertyDefinition>
+    <PropertyDefinition>
+        <Name>EnableQueryTiming</Name>
+        <Path>mondrian.server.execution.EnableQueryTiming</Path>
+        <Category>SQL generation</Category>
+        <Description>
+<p>Property that defines
+whether to record query timings stats.</p>
+        </Description>
+        <Type>boolean</Type>
+        <Default>true</Default>
+    </PropertyDefinition>
 </PropertyDefinitions>

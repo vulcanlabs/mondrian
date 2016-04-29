@@ -90,6 +90,9 @@ public class Execution {
 
     private final Execution parent;
 
+    private static final boolean enableQueryTiming =
+        MondrianProperties.instance().EnableQueryTiming.get();
+
     public Execution(
         Statement statement,
         long timeoutIntervalMillis)
@@ -144,7 +147,7 @@ public class Execution {
                 ? this.startTimeMillis + timeoutIntervalMillis
                 : 0L;
         this.state = State.RUNNING;
-        this.queryTiming.init(true);
+        this.queryTiming.init(enableQueryTiming);
         fireExecutionStartEvent();
     }
 
